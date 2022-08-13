@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страничка</title>
+</head>
+<body>
+<h1>Главная страница</h1>
+<h2>Здесь располагается пример запросов</h2>
+<hr/>
+<b>#1</b>
+<p>Запрос: <b>http://127.0.0.1:5000/movie/{title}</b></p>
+<p>Пример запроса: <b><a href="/movie/A Silent Voice">http://127.0.0.1:5000/movie/A Silent Voice</a></b></p>
+<p>Ожидаемый ответ:</p>
+<p>{<br/>
+  "title": "A Silent Voice",<br/>
+  "country": "Japan",<br/>
+  "release_year": 2016,<br/>
+  "genre": "Anime Features, International Movies",<br/>
+  "description": "A former class bully reaches out to the deaf girl he'd tormented in grade school. He feels unworthy of redemption but tries to make things right.\n"<br/>
+}</p>
+
+<hr/>
+
+<b>#2</b>
+<p>Запрос: <b>http://127.0.0.1:5000/movie/{year1}/to/{year2}</b></p>
+<p>Пример запроса: <b><a href="/movie/1940/to/1942">http://127.0.0.1:5000/movie/1940/to/1942</a></b></p>
+<p>Ожидаемый ответ:</p>
+<p>[<br/>
+  {<br/>
+    "title": "Prelude to War", <br/>
+    "release_year": 1942<br/>
+  }, <br/>
+  {<br/>
+    "title": "The Battle of Midway", <br/>
+    "release_year": 1942<br/>
+  }<br/>
+]</p>
+
+<hr/>
+
+<b>#3</b>
+<p>Запрос: <b>http://127.0.0.1:5000/rating/{group_rating}</b></p>
+<p>Пример запроса: <b><a href="/rating/children">http://127.0.0.1:5000/rating/children</a></b></p>
+<p>Ожидаемый ответ:</p>
+<p>[<br/>
+  {<br/>
+    "title": "A Champion Heart", <br/>
+    "rating": "G", <br/>
+    "description": "When a grieving teen must work off her debt to a ranch, she cares for a wounded horse that teaches her more about healing than she expected.\n"<br/>
+  }, <br/>
+  {<br/>
+    "title": "A Shaun the Sheep Movie: Farmageddon", <br/>
+    "rating": "G", <br/>
+    "description": "Shaun and the flock race to help an adorable alien find her way home after her ship crash-lands near Mossy Bottom Farm and sparks a UFO frenzy.\n"<br/>
+  }, <br/>
+  {<br/>
+    "title": "All Dogs Go to Heaven", <br/>
+    "rating": "G", <br/>
+    "description": "When a canine con artist becomes an angel, he sneaks back to Earth and crosses paths with an orphan girl who can speak to animals.\n"<br/>
+  },<br/>
+    И так далее ......
+</p>
+
+<hr/>
+
+<b>#4</b>
+<p>Запрос: <b>http://127.0.0.1:5000/genre/{genre}</b></p>
+<p>Пример запроса: <b><a href="/genre/sports movies">http://127.0.0.1:5000/genre/sports movies</a></b></p>
+<p>Ожидаемый ответ:</p>
+<p>[<br/>
+  {<br/>
+    "title": "A Life of Speed: The Juan Manuel Fangio Story", <br/>
+    "description": "Juan Manuel Fangio was the Formula One king, winning five world championships in the early 1950s — before protective gear or safety features were used.\n"<br/>
+  }, <br/>
+  {<br/>
+    "title": "Anelka: Misunderstood", <br/>
+    "description": "Inscrutable, incomparable or both? Famed French footballer Nicolas Anelka’s controversial legacy is explored in this in-depth documentary.\n"<br/>
+  }, <br/>
+  {<br/>
+    "title": "Athlete A", <br/>
+    "description": "This documentary focuses on the gymnasts who survived USA Gymnastics doctor Larry Nassar's abuse and the reporters who exposed USAG's toxic culture.\n"<br/>
+  }, <br/>
+    И так далее ......
+</p>
+
+<hr/>
+
+<b>#5</b>
+<p>Запрос: <b>http://127.0.0.1:5000/cast-partners/{actor1}/and/{actor2}</b></p>
+<p>Пример запроса: <b><a href="/cast-partners/Rose McIver/and/Ben Lamb">http://127.0.0.1:5000/cast-partners/Rose McIver/and/Ben Lamb</a></b></p>
+<p>Ожидаемый ответ:</p>
+<p>[<br/>
+  "Alice Krige", <br/>
+  "Honor Kneafsey"<br/>
+]
+</p>
+
+<hr/>
+
+<b>#6</b>
+<p>Запрос: <b>http://127.0.0.1:5000/movie-by-tyg/{movie_type}/{year}/{genre}</b></p>
+<p>Пример запроса: <b><a href="/movie-by-tyg/Movie/1943/Documentaries">http://127.0.0.1:5000/movie-by-tyg/Movie/1943/Documentaries</a></b></p>
+<p>Ожидаемый ответ:</p>
+<p>[<br/>
+  {<br/>
+    "type": "Movie", <br/>
+    "release_year": 1943, <br/>
+    "genre": "Documentaries"<br/>
+  }, <br/>
+  {<br/>
+    "type": "Movie", <br/>
+    "release_year": 1943, <br/>
+    "genre": "Documentaries"<br/>
+  }<br/>
+]<br/>
+</p>
+
+<hr/>
+</body>
+</html>
